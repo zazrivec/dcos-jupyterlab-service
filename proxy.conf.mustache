@@ -20,6 +20,7 @@ server {
 
     #large_client_header_buffers 4 16k;
     #client_header_buffer_size 64k;
+    client_max_body_size 64M;
 
     #set_by_lua $session_secret 'return os.getenv("OIDC_SESSION_SECRET")';
     #set_by_lua $session_check_ssi 'return os.getenv("OIDC_SESSION_CHECK_SSI")';

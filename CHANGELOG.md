@@ -2,6 +2,8 @@
 
 ## Major Features and Improvements
 
+* Based on Debian [9.6](https://github.com/docker-library/repo-info/blob/master/repos/debian/tag-details.md#debian96---linux-amd64)
+
 ### Package Additions
 
 * boost
@@ -37,14 +39,15 @@
 ### Package Bumps
 
 * dask 1.0.0
-* distributed 1.25.0
+* distributed 1.25.1
 * hadoop 2.9.2
+* horovod 0.15.2
 * jupyterlab 0.35.4
-* mlflow 0.8.0
+* mlflow 0.8.1
 * pyarrow 0.11.0
 * r-base 3.5.1
-* ray[rllib] 0.6.0
-* setuptools 40.4.3
+* ray[debug,rllib] 0.6.1
+* setuptools 40.6.3
 * tensorflow 1.11.0
 * tensorflowonspark 1.4.1
 * toree 0.3.0-incubating
@@ -85,7 +88,6 @@
 
 ### Configuration
 
-* [Moved `start_spark_history_server` into spark config section](https://github.com/dcos-labs/dcos-jupyterlab-service/pull/4)
 * The `OIDC_REDIRECT_URI` environment variable must now be specified as an absolute URI since [redirect_uri_path is deprecated](https://github.com/zmartzone/lua-resty-openidc/commit/0f2a68b82cf4849fc3efe4b25c389fc45377fc63)
 * Rename the `OIDC_AUTH_METHOD` environment variable to `OIDC_TOKEN_ENDPOINT_AUTH_METHOD` to disambiguate from the Introspection Endpoint Authentication method
 

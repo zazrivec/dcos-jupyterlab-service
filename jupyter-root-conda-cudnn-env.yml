@@ -8,6 +8,7 @@ dependencies:
 - pytorch::torchvision
 - pip:
   - pygdf
+  - horovod
   - quilt[img,pytorch,torchvision]
   - setuptools==40.6.*
   - tensorflow-gpu==1.11.*

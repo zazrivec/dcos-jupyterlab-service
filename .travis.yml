@@ -11,7 +11,7 @@ env:
     - GPU_DATA_IMAGE_NAME=zazrivec/mesosphere-data-toolkit:latest-gpu
 
 before_install:
-  - docker build -t "$IMAGE_NAME" .
+  - docker build -t "$BASE_IMAGE_NAME" .
   - docker build -t "$GPU_IMAGE_NAME" -f Dockerfile-cuDNN .
   - docker build -t "$BASE_DATA_IMAGE_NAME" -f Dockerfile-data-toolkit .
   - docker build -t "$GPU_DATA_IMAGE_NAME" -f Dockerfile-data-toolkit-cuDNN .

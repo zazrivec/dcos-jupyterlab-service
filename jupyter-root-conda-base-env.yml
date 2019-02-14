@@ -155,6 +155,7 @@ dependencies:
   - s3cmd
   - s3contents
   - sparkmonitor
+  - spark-sklearn
   - tensorflow==1.11.*
   - tensorflow-hub
   - tensorflowonspark==1.4.*

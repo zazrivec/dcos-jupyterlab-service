@@ -123,6 +123,7 @@ dependencies:
   - ray[debug,rllib]==0.6.*
   - redis
   - s3cmd
+  - spark-sklearn
   - tensorflow==1.11.*
   - tensorflow-hub
   - tensorflowonspark==1.4.*

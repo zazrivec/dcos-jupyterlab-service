@@ -3,5 +3,21 @@ language: ruby
 services:
   - docker
 
+env:
+  global:
+    - BASE_IMAGE_NAME=zazrivec/dcos-jupyterlab-service:latest
+    - GPU_IMAGE_NAME=zazrivec/dcos-jupyterlab-service:latest-gpu
+    - BASE_DATA_IMAGE_NAME=zazrivec/mesosphere-data-toolkit:latest
+    - GPU_DATA_IMAGE_NAME=zazrivec/mesosphere-data-toolkit:latest-gpu
+
 before_install:
-  - docker build -t zazrivec/dcos-jupyterlab-service .
+  - docker build -t "$IMAGE_NAME" .
+  - docker build -t "$GPU_IMAGE_NAME" -f Dockerfile-cuDNN .
+  - docker build -t "$BASE_DATA_IMAGE_NAME" -f Dockerfile-data-toolkit .
+  - docker build -t "$GPU_DATA_IMAGE_NAME" -f Dockerfile-data-toolkit-cuDNN .
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master

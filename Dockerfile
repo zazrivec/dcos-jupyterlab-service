@@ -216,8 +216,10 @@ RUN cd /tmp \
     && useradd -m -N -u "${NB_UID}" -g "${NB_GID}" -s /bin/bash "${NB_USER}" \
     && usermod -a -G 99,65534 "${NB_USER}" \
     && chown "${NB_UID}:${NB_GID}" "${CONDA_DIR}" \
+    && chown "${NB_UID}:${NB_GID}" /opt \
     && chmod g+w /etc/passwd \
     && fix-permissions "${CONDA_DIR}" \
+    && fix-permissions /opt \
     && fix-permissions "${HOME}"
 
 RUN echo "deb [arch=amd64] ${TENSORFLOW_SERVING_APT_URL} stable tensorflow-model-server tensorflow-model-server-universal" > /etc/apt/sources.list.d/tensorflow-serving.list \

@@ -1,6 +1,0 @@
-#!/bin/bash
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-docker push "$BASE_IMAGE_NAME"
-docker push "$GPU_IMAGE_NAME"
-docker push "$BASE_DATA_IMAGE_NAME"
-docker push "$GPU_DATA_IMAGE_NAME"

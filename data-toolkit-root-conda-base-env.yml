@@ -114,7 +114,6 @@ dependencies:
   - databricks-cli
   - flatbuffers
   - gym[atari]
-  - horovod
   - mlflow==0.8.*
   - opencv-python
   - psycopg2-binary

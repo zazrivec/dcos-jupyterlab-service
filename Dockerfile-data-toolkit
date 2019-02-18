@@ -1,6 +1,6 @@
-# debian:9.6 - linux; amd64
-# https://github.com/docker-library/repo-info/blob/master/repos/debian/tag-details.md#debian96---linux-amd64
-FROM debian@sha256:38236c068c393272ad02db100e09cac36a5465149e2924a035ee60d6c60c38fe
+# debian:9.7 - linux; amd64
+# https://github.com/docker-library/repo-info/blob/master/repos/debian/tag-details.md#debian97---linux-amd64
+FROM debian@sha256:92cfa9da19ed9dd7683efbf25a5e2e3a15256dd88f224d0a1f907bfa1fb12ad1
 
 ARG BUILD_DATE
 ARG CODENAME="stretch"

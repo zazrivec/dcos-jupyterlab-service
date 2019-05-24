@@ -408,7 +408,7 @@
         "spark_conf_jars_packages": {
           "type": "string",
           "title": "spark.jars.packages",
-          "description": "Comma-separated list of Maven coordinates of jars to include on the driver and executor classpaths (e.g., org.apache.spark:spark-streaming-kafka-0-10_2.11:2.2.1,org.apache.kafka:kafka_2.11:0.10.2.1)",
+          "description": "Comma-separated list of Maven coordinates of jars to include on the driver and executor classpaths (e.g., org.apache.spark:spark-streaming-kafka-0-10_2.11:2.4.0,org.apache.kafka:kafka_2.11:0.10.2.1)",
           "default": ""
         },
         "spark_conf_mesos_principal": {

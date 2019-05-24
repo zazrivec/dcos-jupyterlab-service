@@ -157,7 +157,7 @@
     "SPARK_CONF_SPARK_EXECUTORENV_JAVA_HOME": "spark.executorEnv.JAVA_HOME=/opt/jdk",
     "SPARK_CONF_SPARK_EXECUTORENV_HADOOP_HDFS_HOME": "spark.executorEnv.HADOOP_HDFS_HOME=/opt/hadoop",
     "SPARK_CONF_SPARK_EXECUTORENV_HADOOP_OPTS": "spark.executorEnv.HADOOP_OPTS='-Djava.library.path=/opt/hadoop/lib/native -Djava.security.krb5.conf=/mnt/mesos/sandbox/krb5.conf'",
-    "SPARK_CONF_SPARK_JARS_PACKAGES": "spark.jars.packages=org.apache.spark:spark-streaming-kafka-0-10_2.11:2.2.1,org.apache.kafka:kafka_2.11:0.10.2.1",
+    "SPARK_CONF_SPARK_JARS_PACKAGES": "spark.jars.packages=org.apache.spark:spark-streaming-kafka-0-10_2.11:2.4.0,org.apache.kafka:kafka_2.11:0.10.2.1",
     "TENSORBOARD_LOGDIR": "hdfs://hdfs/",
     "TERM": "xterm-256color"
   },

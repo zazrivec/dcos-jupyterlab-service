@@ -12,8 +12,8 @@ jobs:
     - stage: build docker image
       script:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        #  - docker build -t "$BASE_IMAGE_NAME" .
-        #  - docker build -t "$GPU_IMAGE_NAME" -f Dockerfile-cuDNN .
+        - docker build -t "$BASE_IMAGE_NAME" .
+        - docker build -t "$GPU_IMAGE_NAME" -f Dockerfile-cuDNN .
         - docker build -t "$BASE_DATA_IMAGE_NAME" -f Dockerfile-data-toolkit .
         - docker push "$BASE_DATA_IMAGE_NAME"
         - docker build -t "$GPU_DATA_IMAGE_NAME" -f Dockerfile-data-toolkit-cuDNN .

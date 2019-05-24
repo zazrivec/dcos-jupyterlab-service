@@ -42,7 +42,7 @@ eval \
   ${SPARK_OPTS} \
   --verbose \
   --class org.apache.spark.examples.SparkPi \
-  /opt/spark/examples/jars/spark-examples_2.11-2.2.1.jar 100
+  /opt/spark/examples/jars/spark-examples_2.11-2.4.0.jar 100
 ```
 
 ## Prepare MNIST Dataset with Yahoo's Tensorflow on Spark

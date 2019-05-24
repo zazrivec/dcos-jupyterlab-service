@@ -50,8 +50,9 @@ ARG SPARK_MAJOR_VERSION="2.4"
 ARG SPARK_VERSION="2.4.0"
 ARG DCOS_SPARK_VERSION="2.8.0"
 ARG TENSORFLOW_ECO_URL="https://downloads.mesosphere.com/mesosphere-jupyter-service/assets/tensorflow"
+ARG TENSORFLOW_ECO_URL2="https://github.com/zazrivec/ecosystem/raw/repository/org/tensorflow/spark-tensorflow-connector_2.11"
 ARG TENSORFLOW_HADOOP_JAR_SHA256="668b326be1a7cfa4e621e8abaa9a5dbf1a813bad289ba0ad03e983ae8e841290"
-ARG TENSORFLOW_SPARK_JAR_SHA256="bcc3bcb48cfe72997f7c51e6fd8d379c64d26fd200cbd08617631fd8182a2fbf"
+ARG TENSORFLOW_SPARK_JAR_SHA256="eb8fe540b65c1980e0a28a1c3437a77b0fb59eb7f6c0c2a228988419853b4e97"
 ARG TENSORFLOW_JAR_SHA256="6a4e5c80bad7c826233a9b1750a7d4b5a28c6e5c8fccebefc1e6a0d5feeae4a3"
 ARG TENSORFLOW_JNI_SHA256="8f74ced6dece0e0889eb09b0731ef728feffe0aadadaf8d6401a3ff15aafcc6e"
 ARG TENSORFLOW_SERVING_APT_URL="http://storage.googleapis.com/tensorflow-serving-apt"
@@ -204,7 +205,7 @@ RUN cd /tmp \
     && echo "${TENSORFLOW_JAR_SHA256}" "libtensorflow-${TENSORFLOW_VERSION}.jar" | sha256sum -c - \
     && curl --retry 3 -fsSL -O "${TENSORFLOW_ECO_URL}/${TENSORFLOW_VERSION}/hadoop-${HADOOP_MAJOR_VERSION}/tensorflow-hadoop-${TENSORFLOW_VERSION}.jar" \
     && echo "${TENSORFLOW_HADOOP_JAR_SHA256}" "tensorflow-hadoop-${TENSORFLOW_VERSION}.jar" | sha256sum -c - \
-    && curl --retry 3 -fsSL -O "${TENSORFLOW_ECO_URL}/${TENSORFLOW_VERSION}/spark-${SPARK_MAJOR_VERSION}/spark-tensorflow-connector_2.11-${TENSORFLOW_VERSION}.jar" \
+    && curl --retry 3 -fsSL -O "${TENSORFLOW_ECO_URL2}/${TENSORFLOW_VERSION}/spark-tensorflow-connector_2.11-${TENSORFLOW_VERSION}.jar" \
     && echo "${TENSORFLOW_SPARK_JAR_SHA256}" "spark-tensorflow-connector_2.11-${TENSORFLOW_VERSION}.jar" | sha256sum -c - \
     && cd /tmp \
     && curl --retry 3 -fsSL -O "${TENSORFLOW_URL}/libtensorflow/libtensorflow_jni-${TENSORFLOW_VARIANT}-linux-x86_64-${TENSORFLOW_VERSION}.tar.gz" \

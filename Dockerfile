@@ -43,11 +43,12 @@ ARG NB_GID="100"
 ARG NB_UID="1000"
 ARG NB_USER="jovyan"
 ARG OPENRESTY_REPO="https://openresty.org/package"
-ARG SPARK_DIST_URL="https://downloads.mesosphere.com/mesosphere-jupyter-service/assets/spark"
-ARG SPARK_DIST_SHA256="52e29e83a65688e29da975d1ace7815c6a5b55e76c41d43a28e5e80de2b29843"
+ARG SPARK_DIST_URL="https://downloads.mesosphere.com/spark/assets"
+ARG SPARK_DIST_SHA256="16385df40b7c6e2d94d122e07b332f8150e9fa9190604c9cd4a40c3ffed6950c"
 ARG SPARK_HOME="/opt/spark"
-ARG SPARK_MAJOR_VERSION="2.2"
-ARG SPARK_VERSION="2.2.1"
+ARG SPARK_MAJOR_VERSION="2.4"
+ARG SPARK_VERSION="2.4.0"
+ARG DCOS_SPARK_VERSION="2.8.0"
 ARG TENSORFLOW_ECO_URL="https://downloads.mesosphere.com/mesosphere-jupyter-service/assets/tensorflow"
 ARG TENSORFLOW_HADOOP_JAR_SHA256="668b326be1a7cfa4e621e8abaa9a5dbf1a813bad289ba0ad03e983ae8e841290"
 ARG TENSORFLOW_SPARK_JAR_SHA256="bcc3bcb48cfe72997f7c51e6fd8d379c64d26fd200cbd08617631fd8182a2fbf"
@@ -191,9 +192,9 @@ RUN cd /tmp \
     && echo "${HADOOP_SHA256}" "hadoop-${HADOOP_VERSION}.tar.gz" | sha256sum -c - \
     && tar xf "hadoop-${HADOOP_VERSION}.tar.gz" -C "${HADOOP_HDFS_HOME}" --strip-components=1 \
     && rm -rf "${HADOOP_HDFS_HOME}/share/doc" \
-    && curl --retry 3 -fsSL -O "${SPARK_DIST_URL}/spark-${SPARK_VERSION}-bin.tgz" \
-    && echo "${SPARK_DIST_SHA256}" "spark-${SPARK_VERSION}-bin.tgz" | sha256sum -c - \
-    && tar xf "spark-${SPARK_VERSION}-bin.tgz" -C "${SPARK_HOME}" --strip-components=1 \
+    && curl --retry 3 -fsSL -O "${SPARK_DIST_URL}/${DCOS_SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
+    && echo "${SPARK_DIST_SHA256}" "spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" | sha256sum -c - \
+    && tar xf "spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" -C "${SPARK_HOME}" --strip-components=1 \
     && cd "${SPARK_HOME}/jars" \
     && curl --retry 3 -fsSL -O "${XGBOOST_URL}/${XGBOOST_VERSION}/xgboost4j-${XGBOOST_VERSION}.jar" \
     && echo "${XGBOOST_JAVA_JAR_SHA256}" "xgboost4j-${XGBOOST_VERSION}.jar" | sha256sum -c - \
